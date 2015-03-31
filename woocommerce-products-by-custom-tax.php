@@ -27,20 +27,21 @@ function woo_products_by_custom_tax_shortcode( $atts ) {
 	// Get attributes
 	extract(shortcode_atts(array(
 		'columns' 	=> '4',
-		'taxonomies' => ''
+		'tax_name' => '',
+		'tax_tags' => ''
 	), $atts));
+
+	if ( $tax_name === '' || $tax_tags === '' ) return '';
 
 	ob_start();
 
 	// Define Query Arguments
 	$args = array(
-				'post_type' 	 => 'product',
-				'posts_per_page' => 5,
-				'product_tag' 	 => $taxonomies
+				'post_type' => 'product',
+				$tax_name => $tax_tags
 				);
 
 	// Create the new query
-	//print_r(new WP_Query( $args ));
 	$products = new WP_Query( $args );
 
 	$woocommerce_loop['columns'] = $columns;
