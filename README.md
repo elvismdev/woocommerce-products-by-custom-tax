@@ -1,4 +1,4 @@
-# Woocommerce Products By Custom Tax
+# Woocommerce - Products By Custom Tax
 
 A shortcode to display products by a custom taxonomy
 
