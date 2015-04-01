@@ -18,3 +18,7 @@ By example in the scenario where we have a custom taxonomy type for products whi
 * **tax_name** *(string)*: The custom taxonomy slug
 * **tax_tags** *(string)*: The custom taxonomy tags slug. Accepts also multiple tags as an array separated by comma *(tax_tags="apple,samsung")*
 * **columns** *(integer)*: The ammount of products/colums to display per row
+
+
+
+This plugin is also available from the [Official WordPress Plugin Directory](https://wordpress.org/plugins/woocommerce-products-by-custom-tax). Test and [rate it 5 stars!](https://wordpress.org/support/view/plugin-reviews/woocommerce-products-by-custom-tax?rate=5#postform)
