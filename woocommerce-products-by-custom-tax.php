@@ -9,6 +9,9 @@
  * Requires at least: 3.5
  * Tested up to: 4.1
  */
+if ( ! defined( 'ABSPATH' ) ) {
+    exit; // Exit if accessed directly
+}
 
 function req_woocommerce_notice() {
     ?>
