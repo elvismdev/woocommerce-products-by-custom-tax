@@ -10,6 +10,14 @@
  * Tested up to: 4.1
  */
 
+function req_woocommerce_notice() {
+    ?>
+    <div class="error">
+        <p><?php _e( 'This plugin requires <a target="_blank" href="https://wordpress.org/plugins/woocommerce/">Woocommerce</a>' ); ?></p>
+    </div>
+    <?php
+}
+
 /*
  * List WooCommerce Products by custom taxonomy
  *
