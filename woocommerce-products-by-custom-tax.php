@@ -11,15 +11,15 @@
  */
 if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly
-}
+  }
 
-function req_woocommerce_notice() {
-    ?>
-    <div class="error">
-        <p><?php _e( 'This plugin requires <a target="_blank" href="https://wordpress.org/plugins/woocommerce/">Woocommerce</a>', 'woocommerce-products-by-custom-tax' ); ?></p>
-    </div>
-    <?php
-}
+  function req_woocommerce_notice() {
+  	?>
+  	<div class="error">
+  		<p><?php _e( '<strong>WooCommerce - Display Products by Custom Tax</strong> plugin requires <a target="_blank" href="https://wordpress.org/plugins/woocommerce/">Woocommerce</a> core plugin to be installed and active.', 'woocommerce-products-by-custom-tax' ); ?></p>
+  	</div>
+  	<?php
+  }
 
 /*
  * List WooCommerce Products by custom taxonomy
@@ -75,4 +75,11 @@ function woo_products_by_custom_tax_shortcode( $atts ) {
 
 }
 
-add_shortcode("woo_products_custom_tax", "woo_products_by_custom_tax_shortcode");
+/**
+ * Check if WooCommerce is active and add the short code, if not active display an error.
+ **/
+if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
+	add_shortcode("woo_products_custom_tax", "woo_products_by_custom_tax_shortcode");
+} else {
+	add_action( 'admin_notices', 'req_woocommerce_notice' );
+}
