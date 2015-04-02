@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 function req_woocommerce_notice() {
     ?>
     <div class="error">
-        <p><?php _e( 'This plugin requires <a target="_blank" href="https://wordpress.org/plugins/woocommerce/">Woocommerce</a>' ); ?></p>
+        <p><?php _e( 'This plugin requires <a target="_blank" href="https://wordpress.org/plugins/woocommerce/">Woocommerce</a>', 'woocommerce-products-by-custom-tax' ); ?></p>
     </div>
     <?php
 }
