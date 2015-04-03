@@ -3,7 +3,7 @@
  * Plugin Name: WooCommerce - Display Products by Custom Tax
  * Plugin URI: http://elvismdev.github.io/woocommerce-products-by-custom-tax
  * Description: List WooCommerce products by a custom taxonomy type for products using a shortcode, ex: [woo_products_custom_tax tax_name="vendor" tax_tags="apple,samsung" columns="4"]
- * Version: 1.1
+ * Version: 1.2
  * Author: Elvis Morales
  * Author URI: https://twitter.com/n3rdh4ck3r
  * Requires at least: 3.5
@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly
   }
 
-  function req_woocommerce_notice() {
+  function wpbct_no_woocommerce_notice() {
   	?>
   	<div class="error">
   		<p><?php _e( '<strong>WooCommerce - Display Products by Custom Tax</strong> plugin requires <a target="_blank" href="https://wordpress.org/plugins/woocommerce/">Woocommerce</a> core plugin to be installed and active.', 'woocommerce-products-by-custom-tax' ); ?></p>
@@ -26,7 +26,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * ex: [woo_products_custom_tax tax_name="vendor" tax_tags="apple,samsung" columns="4"]
  */
-function woo_products_by_custom_tax_shortcode( $atts ) {
+function wpbct_products_by_custom_tax( $atts ) {
 	global $woocommerce_loop;
 
 	if ( empty( $atts ) ) return '';
@@ -79,7 +79,7 @@ function woo_products_by_custom_tax_shortcode( $atts ) {
  * Check if WooCommerce is active and add the short code, if not active display an error.
  **/
 if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
-	add_shortcode("woo_products_custom_tax", "woo_products_by_custom_tax_shortcode");
+	add_shortcode( 'woo_products_custom_tax', 'wpbct_products_by_custom_tax' );
 } else {
-	add_action( 'admin_notices', 'req_woocommerce_notice' );
+	add_action( 'admin_notices', 'wpbct_no_woocommerce_notice' );
 }
