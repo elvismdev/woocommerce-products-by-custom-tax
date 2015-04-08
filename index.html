@@ -40,15 +40,16 @@ products in post or pages filtering them by a custom taxonomy type.</p>
         <h3>
 <a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h3>
 
-<pre><code>[woo_products_custom_tax tax_name="vendor" tax_tags="apple" columns="4"]
+<pre><code>[woo_products_custom_tax tax_name="vendor" tax_tags="apple" columns="4" template="product"]
 </code></pre>
 
 <h3>
 <a id="attributes" class="anchor" href="#attributes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Attributes</h3>
 <ul>
-  <li><strong>tax_name</strong> <em>(string)</em>: The custom taxonomy slug</li>
-  <li><strong>tax_tags</strong> <em>(string)</em>: The custom taxonomy tags slug. Accepts also multiple tags as an array separated by comma <em>(tax_tags="apple,samsung")</em></li>
-  <li><strong>columns</strong> <em>(integer)</em>: The ammount of products/colums to display per row</li>
+  <li><strong>tax_name</strong> <em>(string) (required)</em>: The custom taxonomy slug</li>
+  <li><strong>tax_tags</strong> <em>(string) (required)</em>: The custom taxonomy tags slug. Accepts also multiple tags as an array separated by comma <em>(tax_tags="apple,samsung")</em></li>
+  <li><strong>columns</strong> <em>(integer) (optional, default = 4)</em>: The ammount of products/colums to display per row</li>
+  <li><strong>template</strong> <em>(string) (optional, default = "product")</em>: Specifies the WooCommerce template file to use for displaying products. e.g. Instead of loading the default file `/wp-content/plugins/woocommerce/templates/content-product.php` you might want to use your custom template override file `/wp-content/themes/twentyfifteen/woocommerce/content-my-custom-product-file.php`. For this case you can load the template like *(template="my-custom-product-file")*.</li>
 </ul>
 
 <h3>
