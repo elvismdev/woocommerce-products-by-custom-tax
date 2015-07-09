@@ -35,7 +35,8 @@ function wpbct_shortcode( $atts, $content = null ) {
 		'tax_name' => '', // Required
 		'tax_tags' => '', // Required
 		'columns' => '4', // Optional
-		'template' => 'product' // Optional
+		'template' => 'product', // Optional
+		'qty' => '10' // Optional
 		), $atts));
 
 	if ( $tax_name === '' || $tax_tags === '' ) return '';
@@ -44,7 +45,8 @@ function wpbct_shortcode( $atts, $content = null ) {
 
 	$args = array(
 		'post_type' => 'product',
-		$tax_name => $tax_tags
+		'posts_per_page' => sanitize_text_field( $qty ),
+		$tax_name => sanitize_text_field( $tax_tags )
 		);
 
 	$products = new WP_Query( $args );
