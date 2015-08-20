@@ -2,12 +2,12 @@
 /**
  * Plugin Name: WooCommerce - Display Products by Custom Tax
  * Plugin URI: http://elvismdev.github.io/woocommerce-products-by-custom-tax
- * Description: List WooCommerce products by a custom taxonomy type for products using a shortcode, ex: [woo_products_custom_tax tax_name="vendor" tax_tags="apple,samsung" columns="4"]
- * Version: 1.4
+ * Description: List WooCommerce products by a custom taxonomy type for products using a shortcode, ex: [woo_products_custom_tax tax_name="vendor" tax_tags="apple,samsung" columns="4" template="product" qty="10" order="DESC"]
+ * Version: 1.5
  * Author: Elvis Morales
  * Author URI: https://twitter.com/n3rdh4ck3r
  * Requires at least: 3.5
- * Tested up to: 4.2.2
+ * Tested up to: 4.3
  */
 if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly
@@ -24,7 +24,7 @@ function wpbct_no_woocommerce_notice() {
 /*
  * List WooCommerce Products by custom taxonomy
  *
- * ex: [woo_products_custom_tax tax_name="vendor" tax_tags="apple,samsung" columns="4"]
+ * ex: [woo_products_custom_tax tax_name="vendor" tax_tags="apple" columns="4" template="product" qty="10" order="DESC"]
  */
 function wpbct_shortcode( $atts, $content = null ) {
 	global $woocommerce_loop;
@@ -36,7 +36,8 @@ function wpbct_shortcode( $atts, $content = null ) {
 		'tax_tags' => '', // Required
 		'columns' => '4', // Optional
 		'template' => 'product', // Optional
-		'qty' => '10' // Optional
+		'qty' => '10', // Optional
+		'order' => 'DESC' // Optional
 		), $atts));
 
 	if ( $tax_name === '' || $tax_tags === '' ) return '';
@@ -46,7 +47,8 @@ function wpbct_shortcode( $atts, $content = null ) {
 	$args = array(
 		'post_type' => 'product',
 		'posts_per_page' => sanitize_text_field( $qty ),
-		$tax_name => sanitize_text_field( $tax_tags )
+		$tax_name => sanitize_text_field( $tax_tags ),
+		'order' => sanitize_text_field( $order )
 		);
 
 	$products = new WP_Query( $args );
