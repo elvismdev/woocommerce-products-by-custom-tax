@@ -10,7 +10,7 @@ By example in the scenario where we have a custom taxonomy type for products whi
 ## Usage
 
 ```
-[woo_products_custom_tax tax_name="vendor" tax_tags="apple" columns="4" template="product" qty="10"]
+[woo_products_custom_tax tax_name="vendor" tax_tags="apple" columns="4" template="product" qty="10" order="DESC"]
 ```
 
 ## Attributes
@@ -20,6 +20,7 @@ By example in the scenario where we have a custom taxonomy type for products whi
 * **columns** *(integer) (optional, default = 4)*: The ammount of products/colums to display per row.
 * **template** *(string) (optional, default = 'product')*: Specifies the WooCommerce template file to use for displaying products. e.g. Instead of loading the default file `/wp-content/plugins/woocommerce/templates/content-product.php` you might want to use your custom template override file `/wp-content/themes/twentyfifteen/woocommerce/content-my-custom-product-file.php`. For this case you can load the template like *(template="my-custom-product-file")*.
 * **qty** *(integer) (optional, default = 10)*: The ammount of products to display per page/output.
+* **order** *(string) (optional, default = 'DESC')*: The order of products to display per page/output. 'ASC' - ascending order from lowest to highest values. 'DESC' - descending order from highest to lowest values.
 
 
 
