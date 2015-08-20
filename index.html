@@ -1,83 +1,85 @@
 <!DOCTYPE html>
 <html>
 
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="Woocommerce Products By Custom Tax : A shortcode to display products within pages and posts by a custom taxonomy">
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="description" content="Woocommerce Products By Custom Tax : A shortcode to display products within pages and posts by a custom taxonomy">
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+  <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
-    <title>Woocommerce - Products By Custom Tax</title>
-  </head>
+  <title>Woocommerce - Products By Custom Tax</title>
+</head>
 
-  <body>
+<body>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/elvismdev/woocommerce-products-by-custom-tax">View on GitHub</a>
+  <!-- HEADER -->
+  <div id="header_wrap" class="outer">
+    <header class="inner">
+      <a id="forkme_banner" href="https://github.com/elvismdev/woocommerce-products-by-custom-tax">View on GitHub</a>
 
-          <h1 id="project_title">Woocommerce - Products By Custom Tax</h1>
-          <h2 id="project_tagline">A shortcode to display products within pages and posts by a custom taxonomy.</h2>
+      <h1 id="project_title">Woocommerce - Products By Custom Tax</h1>
+      <h2 id="project_tagline">A shortcode to display products within pages and posts by a custom taxonomy.</h2>
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/elvismdev/woocommerce-products-by-custom-tax/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/elvismdev/woocommerce-products-by-custom-tax/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-      <h3>
-<a id="description" class="anchor" href="#description" aria-hidden="true"><span class="octicon octicon-link"></span></a>Description</h3>
-<p><a href="http://docs.woothemes.com/document/woocommerce-shortcodes" target="_blank">Shortcodes included with WooCommerce</a> lacks on the possibility to display 
-products in post or pages filtering them by a custom taxonomy type.</p>
-<p>By example in the scenario where we have a custom taxonomy type for products which is called <strong>Vendors</strong> and this one contains 
-<em>Apple, Samsung, LG, Motorola, Microsoft, ...</em> as taxonomy tags elements. If we like to display only the products by <strong>Apple</strong> in a page or post, here this odd tweak plugin comes to the rescue.</p>
-        <h3>
-<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h3>
-
-<pre><code>[woo_products_custom_tax tax_name="vendor" tax_tags="apple" columns="4" template="product"]
-</code></pre>
-
-<h3>
-<a id="attributes" class="anchor" href="#attributes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Attributes</h3>
-<ul>
-  <li><strong>tax_name</strong> <em>(string) (required)</em>: The custom taxonomy slug</li>
-  <li><strong>tax_tags</strong> <em>(string) (required)</em>: The custom taxonomy tags slug. Accepts also multiple tags as an array separated by comma <em>(tax_tags="apple,samsung")</em></li>
-  <li><strong>columns</strong> <em>(integer) (optional, default = 4)</em>: The ammount of products/colums to display per row</li>
-  <li><strong>template</strong> <em>(string) (optional, default = "product")</em>: Specifies the WooCommerce template file to use for displaying products. e.g. Instead of loading the default file <code>/wp-content/plugins/woocommerce/templates/content-product.php</code> you might want to use your custom template override file <code>/wp-content/themes/twentyfifteen/woocommerce/content-my-custom-product-file.php</code>. For this case you can load the template like <em>(template="my-custom-product-file")</em>.</li>
-</ul>
-
-<h3>
-<a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p><a href="https://github.com/elvismdev" class="user-mention">@elvismdev</a></p>
-<p>Wanna be on the list? Pull requests for fixes, new features and code enhancements are more than welcome on <a href="https://github.com/elvismdev/woocommerce-products-by-custom-tax">GitHub</a>! ;)</p>
+      <section id="downloads">
+        <a class="zip_download_link" href="https://github.com/elvismdev/woocommerce-products-by-custom-tax/zipball/master">Download this project as a .zip file</a>
+        <a class="tar_download_link" href="https://github.com/elvismdev/woocommerce-products-by-custom-tax/tarball/master">Download this project as a tar.gz file</a>
       </section>
-    </div>
+    </header>
+  </div>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright"><a href="http://elvismdev.github.io/woocommerce-products-by-custom-tax">Woocommerce Products By Custom Tax</a> maintained by <a href="https://github.com/elvismdev">elvismdev</a></p>
-      </footer>
-    </div>
+  <!-- MAIN CONTENT -->
+  <div id="main_content_wrap" class="outer">
+    <section id="main_content" class="inner">
+      <h3>
+        <a id="description" class="anchor" href="#description" aria-hidden="true"><span class="octicon octicon-link"></span></a>Description</h3>
+        <p><a href="http://docs.woothemes.com/document/woocommerce-shortcodes" target="_blank">Shortcodes included with WooCommerce</a> lacks on the possibility to display
+          products in post or pages filtering them by a custom taxonomy type.</p>
+          <p>By example in the scenario where we have a custom taxonomy type for products which is called <strong>Vendors</strong> and this one contains
+            <em>Apple, Samsung, LG, Motorola, Microsoft, ...</em> as taxonomy tags elements. If we like to display only the products by <strong>Apple</strong> in a page or post, here this odd tweak plugin comes to the rescue.</p>
+            <h3>
+              <a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h3>
+
+              <pre><code>[woo_products_custom_tax tax_name="vendor" tax_tags="apple" columns="4" template="product" qty="10" order="DESC"]
+              </code></pre>
+
+              <h3>
+                <a id="attributes" class="anchor" href="#attributes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Attributes</h3>
+                <ul>
+                  <li><strong>tax_name</strong> <em>(string) (required)</em>: The custom taxonomy slug</li>
+                  <li><strong>tax_tags</strong> <em>(string) (required)</em>: The custom taxonomy tags slug. Accepts also multiple tags as an array separated by comma <em>(tax_tags="apple,samsung")</em></li>
+                  <li><strong>columns</strong> <em>(integer) (optional, default = 4)</em>: The ammount of products/colums to display per row</li>
+                  <li><strong>template</strong> <em>(string) (optional, default = "product")</em>: Specifies the WooCommerce template file to use for displaying products. e.g. Instead of loading the default file <code>/wp-content/plugins/woocommerce/templates/content-product.php</code> you might want to use your custom template override file <code>/wp-content/themes/twentyfifteen/woocommerce/content-my-custom-product-file.php</code>. For this case you can load the template like <em>(template="my-custom-product-file")</em>.</li>
+                  <li><strong>qty</strong> <em>(integer) (optional, default = 10)</em>: The ammount of products to display per page/output.</li>
+                  <li><strong>order</strong> <em>(string) (optional, default = 'DESC')</em>: The order of products to display per page/output. 'ASC' - ascending order from lowest to highest values. 'DESC' - descending order from highest to lowest values.</li>
+                </ul>
+
+                <h3>
+                  <a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+
+                  <p><a href="https://github.com/elvismdev" class="user-mention">@elvismdev</a></p>
+                  <p>Wanna be on the list? Pull requests for fixes, new features and code enhancements are more than welcome on <a href="https://github.com/elvismdev/woocommerce-products-by-custom-tax">GitHub</a>! ;)</p>
+                </section>
+              </div>
+
+              <!-- FOOTER  -->
+              <div id="footer_wrap" class="outer">
+                <footer class="inner">
+                  <p class="copyright"><a href="http://elvismdev.github.io/woocommerce-products-by-custom-tax">Woocommerce Products By Custom Tax</a> maintained by <a href="https://github.com/elvismdev">elvismdev</a></p>
+                </footer>
+              </div>
 
               <script type="text/javascript">
-            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-          </script>
-          <script type="text/javascript">
-            try {
-              var pageTracker = _gat._getTracker("UA-61362347-1");
-            pageTracker._trackPageview();
-            } catch(err) {}
-          </script>
+                var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+                document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+              </script>
+              <script type="text/javascript">
+                try {
+                  var pageTracker = _gat._getTracker("UA-61362347-1");
+                  pageTracker._trackPageview();
+                } catch(err) {}
+              </script>
 
 
-  </body>
-</html>
+            </body>
+            </html>
