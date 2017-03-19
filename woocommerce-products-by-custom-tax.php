@@ -3,88 +3,30 @@
  * Plugin Name: WooCommerce - Display Products by Custom Tax
  * Plugin URI: http://elvismdev.github.io/woocommerce-products-by-custom-tax
  * Description: List WooCommerce products by a custom taxonomy type for products using a shortcode, ex: [woo_products_custom_tax tax_name="vendor" tax_tags="apple,samsung" columns="4" template="product" qty="10" order="DESC"]
- * Version: 1.5
+ * Version: 2.0
  * Author: Elvis Morales
- * Author URI: https://twitter.com/n3rdh4ck3r
+ * Author URI: http://elvismdev.io
  * Requires at least: 3.5
- * Tested up to: 4.3
+ * Tested up to: 4.7.3
  */
-if ( ! defined( 'ABSPATH' ) ) {
-    exit; // Exit if accessed directly
-}
 
-function wpbct_no_woocommerce_notice() {
-	?>
-	<div class="error">
-		<p><?php _e( '<strong>WooCommerce - Display Products by Custom Tax</strong> plugin requires <a target="_blank" href="https://wordpress.org/plugins/woocommerce/">Woocommerce</a> core plugin to be installed and active.', 'woocommerce-products-by-custom-tax' ); ?></p>
-	</div>
-	<?php
-}
-
-/*
- * List WooCommerce Products by custom taxonomy
- *
- * ex: [woo_products_custom_tax tax_name="vendor" tax_tags="apple" columns="4" template="product" qty="10" order="DESC"]
- */
-function wpbct_shortcode( $atts, $content = null ) {
-	global $woocommerce_loop;
-
-	if ( empty( $atts ) ) return '';
-
-	extract(shortcode_atts(array(
-		'tax_name' => '', // Required
-		'tax_tags' => '', // Required
-		'columns' => '4', // Optional
-		'template' => 'product', // Optional
-		'qty' => '10', // Optional
-		'order' => 'DESC' // Optional
-		), $atts));
-
-	if ( $tax_name === '' || $tax_tags === '' ) return '';
-
-	ob_start();
-
-	$args = array(
-		'post_type' => 'product',
-		'posts_per_page' => sanitize_text_field( $qty ),
-		$tax_name => sanitize_text_field( $tax_tags ),
-		'order' => sanitize_text_field( $order )
-		);
-
-	$products = new WP_Query( $args );
-
-	$woocommerce_loop['columns'] = $columns;
-
-
-	if( $products->have_posts() ) :
-
-		woocommerce_product_loop_start();
-
-	while ( $products->have_posts() ) : $products->the_post();
-
-	wc_get_template_part( 'content', $template );
-
-	endwhile;
-
-	woocommerce_product_loop_end();
-
-	else :
-
-		_e('No product matching your criteria.');
-
-	endif;
-
-	wp_reset_postdata();
-
-	return '<div class="woocommerce columns-' . $columns . '">' . ob_get_clean() . '</div>';
-
+// If this file is called directly, abort.
+if ( ! defined( 'WPINC' ) ) {
+	die;
 }
 
 /**
- * Check if WooCommerce is active and add the short code, if not active display an error.
- **/
-if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
-	add_shortcode( 'woo_products_custom_tax', 'wpbct_shortcode' );
-} else {
-	add_action( 'admin_notices', 'wpbct_no_woocommerce_notice' );
+ * The core plugin class.
+ */
+require plugin_dir_path( __FILE__ ) . 'includes/class-woocommerce-products-by-custom-tax.php';
+
+
+
+/**
+ * Execute the plugin.
+ */
+function run_woocommerce_products_by_custom_tax() {
+	$plugin = new WooCommerce_Products_By_Custom_Tax();
+	$plugin->run();
 }
+run_woocommerce_products_by_custom_tax();
