@@ -3,11 +3,11 @@
  * Plugin Name: WooCommerce - Display Products by Custom Tax
  * Plugin URI: http://elvismdev.github.io/woocommerce-products-by-custom-tax
  * Description: List WooCommerce products by a custom taxonomy type for products using a shortcode, ex: [woo_products_custom_tax tax_name="vendor" tax_tags="apple,samsung" columns="4" template="product" qty="10" order="DESC"]
- * Version: 1.5
+ * Version: 2.0
  * Author: Elvis Morales
- * Author URI: https://twitter.com/n3rdh4ck3r
+ * Author URI: http://elvismdev.io
  * Requires at least: 3.5
- * Tested up to: 4.3
+ * Tested up to: 4.7.3
  */
 if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly
