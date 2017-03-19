@@ -32,7 +32,9 @@ class WooCommerce_Products_By_Custom_Tax_Admin {
 	 * Display no WooCommerce notice.
 	 */
 	function wpbct_no_woocommerce_notice() {
-		include( plugin_dir_path( __FILE__ ) . 'partials/' . $this->plugin_name . '-admin-display.php' );
+		if ( !is_plugin_active( 'woocommerce/woocommerce.php' ) ) {
+			include( plugin_dir_path( __FILE__ ) . 'partials/' . $this->plugin_name . '-admin-display.php' );
+		}
 	}
 
 }
