@@ -47,7 +47,9 @@ class WooCommerce_Products_By_Custom_Tax {
 	private function define_admin_hooks() {
 		$plugin_admin = new WooCommerce_Products_By_Custom_Tax_Admin( $this->get_plugin_name(), $this->get_version() );
 		// Display backend error notification if WooCommerce is not active.
-		$this->loader->add_action( 'admin_notices', $plugin_admin, 'wpbct_no_woocommerce_notice' );
+		if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
+			$this->loader->add_action( 'admin_notices', $plugin_admin, 'wpbct_no_woocommerce_notice' );
+		}	
 	}
 	/**
 	 * Register all of the hooks related to the public-facing functionality
