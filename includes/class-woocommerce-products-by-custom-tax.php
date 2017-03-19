@@ -2,7 +2,7 @@
 
 
 
-class Woocommerce_Products_By_Custom_Tax {
+class WooCommerce_Products_By_Custom_Tax {
 	/**
 	 * @access   protected
 	 * @var      Site_Wide_Info_Loader    $loader    Maintains and registers all hooks for the plugin.
@@ -36,7 +36,7 @@ class Woocommerce_Products_By_Custom_Tax {
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-woocommerce-products-by-custom-tax-loader.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-woocommerce-products-by-custom-tax-admin.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-woocommerce-products-by-custom-tax-public.php';
-		$this->loader = new Woocommerce_Products_By_Custom_Tax_Loader();
+		$this->loader = new WooCommerce_Products_By_Custom_Tax_Loader();
 	}
 	/**
 	 * Register all of the hooks related to the admin area functionality
@@ -45,7 +45,7 @@ class Woocommerce_Products_By_Custom_Tax {
 	 * @access   private
 	 */
 	private function define_admin_hooks() {
-		$plugin_admin = new Woocommerce_Products_By_Custom_Tax_Admin( $this->get_plugin_name(), $this->get_version() );
+		$plugin_admin = new WooCommerce_Products_By_Custom_Tax_Admin( $this->get_plugin_name(), $this->get_version() );
 		// Display backend error notification if WooCommerce is not active.
 		$this->loader->add_action( 'admin_notices', $plugin_admin, 'wpbct_no_woocommerce_notice' );
 	}
@@ -56,7 +56,7 @@ class Woocommerce_Products_By_Custom_Tax {
 	 * @access   private
 	 */
 	private function define_public_hooks() {
-		$plugin_public = new Woocommerce_Products_By_Custom_Tax_Public( $this->get_plugin_name(), $this->get_version() );
+		$plugin_public = new WooCommerce_Products_By_Custom_Tax_Public( $this->get_plugin_name(), $this->get_version() );
 		// Register the shortcode.
 		$this->loader->add_action( 'init', $plugin_public, 'register_shortcode' );
 	}

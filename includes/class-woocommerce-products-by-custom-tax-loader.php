@@ -2,7 +2,7 @@
 
 
 
-class Woocommerce_Products_By_Custom_Tax_Loader {
+class WooCommerce_Products_By_Custom_Tax_Loader {
 	/**
 	 * The array of actions registered with WordPress.
 	 *
