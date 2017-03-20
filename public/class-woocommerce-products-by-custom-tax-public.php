@@ -98,5 +98,16 @@ class WooCommerce_Products_By_Custom_Tax_Public {
 	public function register_shortcode() {
 		add_shortcode( 'woo_products_custom_tax', array( &$this, 'wpbct_shortcode' ) );
 	}
+
+	/**
+	 * Support Pagination powered by Shortcode Pagination for WooCommerce plugin
+	 * https://wordpress.org/plugins/shortcode-pagination-for-woocommerce/
+	 * @param array $shortcodes
+	 * @return array
+	 */
+	public function pagination_support( $shortcodes ) {
+		$shortcodes[] = 'woo_products_custom_tax';
+		return $shortcodes;
+	}
 	
 }
