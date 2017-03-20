@@ -43,6 +43,9 @@ This plugin requires [WooCommerce](https://wordpress.org/plugins/woocommerce) co
 1. The attributes
 
 == Changelog ==
+= 2.0 =
+* Core - Rewritten all plugin codebase.
+
 = 1.5 =
 * Feature - Added 'order' parameter.
 
