@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: woocommerce, shortcode, custom, taxonomy
 Requires at least: 3.5
 Tested up to: 4.7.3
-Stable tag: 2.1
+Stable tag: 2.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -47,6 +47,9 @@ For pagination support please install [Shortcode Pagination for WooCommerce](htt
 1. The attributes
 
 == Changelog ==
+= 2.2 =
+* Fix - Added missing plugin core files from subfolders.
+
 = 2.1 =
 * Feature - Added pagination support powered by [Shortcode Pagination for WooCommerce](https://wordpress.org/plugins/shortcode-pagination-for-woocommerce/) plugin.
 

@@ -1,7 +1,6 @@
 <?php
 
 
-
 class WooCommerce_Products_By_Custom_Tax {
 	/**
 	 * @access   protected

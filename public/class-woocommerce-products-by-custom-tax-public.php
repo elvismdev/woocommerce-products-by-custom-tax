@@ -1,7 +1,6 @@
 <?php
 
 
-
 class WooCommerce_Products_By_Custom_Tax_Public {
 	/**
 	 * The ID of this plugin.
