@@ -34,23 +34,27 @@ class WooCommerce_Products_By_Custom_Tax_Public {
  	 * ex: [woo_products_custom_tax tax_name="vendor" tax_tags="apple" columns="4" template="product" qty="10" order="DESC"]
  	 */
 	function wpbct_shortcode( $atts, $content = null ) {
-		global $woocommerce_loop;
-
+		// If shortcode doesn't have attributes, exit this function 
 		if ( empty( $atts ) ) return '';
 
-		extract(shortcode_atts(array(
+		// Extract shortcode attributes
+		extract( shortcode_atts( array(
 		'tax_name' => '', // Required
 		'tax_tags' => '', // Required
 		'columns' => '4', // Optional
 		'template' => 'product', // Optional
 		'qty' => '10', // Optional
 		'order' => 'DESC' // Optional
-		), $atts));
+		), $atts) );
 
+		// If we don't have a tax_name or tax_tags exist this function.
 		if ( $tax_name === '' || $tax_tags === '' ) return '';
 
-		ob_start();
+		// Gather global $woocommerce_loop
+		global $woocommerce_loop;
 
+
+		// Prepare shortcode arguments
 		$args = array(
 			'post_type' => 'product',
 			'posts_per_page' => sanitize_text_field( $qty ),
@@ -62,6 +66,7 @@ class WooCommerce_Products_By_Custom_Tax_Public {
 
 		$woocommerce_loop['columns'] = $columns;
 
+		ob_start();
 
 		if( $products->have_posts() ) :
 
@@ -92,6 +97,17 @@ class WooCommerce_Products_By_Custom_Tax_Public {
 	 */
 	public function register_shortcode() {
 		add_shortcode( 'woo_products_custom_tax', array( &$this, 'wpbct_shortcode' ) );
+	}
+
+	/**
+	 * Support Pagination powered by Shortcode Pagination for WooCommerce plugin
+	 * https://wordpress.org/plugins/shortcode-pagination-for-woocommerce/
+	 * @param array $shortcodes
+	 * @return array
+	 */
+	public function pagination_support( $shortcodes ) {
+		$shortcodes[] = 'woo_products_custom_tax';
+		return $shortcodes;
 	}
 	
 }

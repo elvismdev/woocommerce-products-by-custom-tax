@@ -59,6 +59,10 @@ class WooCommerce_Products_By_Custom_Tax {
 		$plugin_public = new WooCommerce_Products_By_Custom_Tax_Public( $this->get_plugin_name(), $this->get_version() );
 		// Register the shortcode.
 		$this->loader->add_action( 'init', $plugin_public, 'register_shortcode' );
+
+		// Adds compatibility with Shortcode Pagination for WooCommerce plugin to provide pagination for this shortcode.
+		// https://wordpress.org/plugins/shortcode-pagination-for-woocommerce/
+		$this->loader->add_filter( 'jck-wsp-shortcodes', $plugin_public, 'pagination_support' );
 	}
 	/**
 	 * Run the loader to execute all of the hooks with WordPress.

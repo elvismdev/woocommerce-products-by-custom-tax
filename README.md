@@ -22,6 +22,8 @@ By example in the scenario where we have a custom taxonomy type for products whi
 * **qty** *(integer) (optional, default = 10)*: The ammount of products to display per page/output.
 * **order** *(string) (optional, default = 'DESC')*: The order of products to display per page/output. 'ASC' - ascending order from lowest to highest values. 'DESC' - descending order from highest to lowest values.
 
+## Pagination
+For pagination support please install [Shortcode Pagination for WooCommerce](https://wordpress.org/plugins/shortcode-pagination-for-woocommerce/).
 
 
 This plugin is also available from the [Official WordPress Plugin Directory](https://wordpress.org/plugins/woocommerce-products-by-custom-tax). Test and [rate it 5 stars!](https://wordpress.org/support/view/plugin-reviews/woocommerce-products-by-custom-tax?rate=5#postform)
