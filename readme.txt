@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: woocommerce, shortcode, custom, taxonomy
 Requires at least: 3.5
 Tested up to: 4.7.3
-Stable tag: 2.0
+Stable tag: 2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,6 +26,9 @@ For example in the scenario where we have a custom taxonomy type for products wh
 * **qty** *(integer) (optional, default = 10)*: The max ammount of products to display per page/output.
 * **order** *(string) (optional, default = 'DESC')*: The order of products to display per page/output. 'ASC' - ascending order from lowest to highest values. 'DESC' - descending order from highest to lowest values.
 
+= Pagination =
+For pagination support please install [Shortcode Pagination for WooCommerce](https://wordpress.org/plugins/shortcode-pagination-for-woocommerce/).
+
 
 *Pull requests for fixes, new features and enhancements are welcome on [GitHub](https://github.com/elvismdev/woocommerce-products-by-custom-tax)* ;)
 
@@ -36,13 +39,17 @@ For example in the scenario where we have a custom taxonomy type for products wh
 
 == Frequently Asked Questions ==
 = Requirements =
-This plugin requires [WooCommerce](https://wordpress.org/plugins/woocommerce) core plugin.
+* This plugin requires [WooCommerce](https://wordpress.org/plugins/woocommerce) core plugin.
+* Pagination requires [Shortcode Pagination for WooCommerce](https://wordpress.org/plugins/shortcode-pagination-for-woocommerce/) plugin.
 
 
 == Screenshots ==
 1. The attributes
 
 == Changelog ==
+= 2.1 =
+* Feature - Added pagination support powered by [Shortcode Pagination for WooCommerce](https://wordpress.org/plugins/shortcode-pagination-for-woocommerce/) plugin.
+
 = 2.0 =
 * Core - Rewritten all plugin codebase.
 
