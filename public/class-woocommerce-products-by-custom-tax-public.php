@@ -49,8 +49,6 @@ class WooCommerce_Products_By_Custom_Tax_Public {
 
 		if ( $tax_name === '' || $tax_tags === '' ) return '';
 
-		ob_start();
-
 		$args = array(
 			'post_type' => 'product',
 			'posts_per_page' => sanitize_text_field( $qty ),
@@ -62,6 +60,7 @@ class WooCommerce_Products_By_Custom_Tax_Public {
 
 		$woocommerce_loop['columns'] = $columns;
 
+		ob_start();
 
 		if( $products->have_posts() ) :
 
