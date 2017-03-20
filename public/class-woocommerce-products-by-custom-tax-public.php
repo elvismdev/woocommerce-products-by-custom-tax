@@ -34,8 +34,6 @@ class WooCommerce_Products_By_Custom_Tax_Public {
  	 * ex: [woo_products_custom_tax tax_name="vendor" tax_tags="apple" columns="4" template="product" qty="10" order="DESC"]
  	 */
 	function wpbct_shortcode( $atts, $content = null ) {
-		global $woocommerce_loop;
-
 		if ( empty( $atts ) ) return '';
 
 		extract(shortcode_atts(array(
@@ -48,6 +46,8 @@ class WooCommerce_Products_By_Custom_Tax_Public {
 		), $atts));
 
 		if ( $tax_name === '' || $tax_tags === '' ) return '';
+
+		global $woocommerce_loop;
 
 		$args = array(
 			'post_type' => 'product',
